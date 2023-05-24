@@ -31,4 +31,9 @@ class SqliteConnectionFactory {
 
     return _db!;
   }
+
+  void closeConnection() {
+    _db?.close();
+    _db == null;
+  }
 }
