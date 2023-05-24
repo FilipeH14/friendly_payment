@@ -8,6 +8,7 @@ class AppPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Friendly Paymment',
+      debugShowCheckedModeBanner: false,
       home: SplashPage(),
     );
   }
