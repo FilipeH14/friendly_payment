@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 
 class BaseRestUser {
-  Future<void> restDioRequest({
+  Future<Map> restDioRequest({
     required String url,
     required String method,
     Map? headers,
@@ -32,8 +32,10 @@ class BaseRestUser {
       return response.data;
     } on DioError catch (e, s) {
       log('Dio Connection Error -->', error: e, stackTrace: s);
+      return e.response?.data ?? {};
     } on Exception catch (e, s) {
       log('Error -->', error: e, stackTrace: s);
-    }
+      return {};
+    } 
   }
 }
