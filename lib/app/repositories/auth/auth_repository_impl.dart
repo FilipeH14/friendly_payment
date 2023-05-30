@@ -34,6 +34,22 @@ class AuthRepositoryImpl implements AuthRepository {
 
     final userData = User.fromMap(result['result']);
 
-    throw UnimplementedError();
+    return userData;
+
+    // throw UnimplementedError();
+  }
+
+  Future<User> validateToken(String token) async {
+    final result = await _request.restDioRequest(
+      url: Endpoints.validateToken,
+      method: HttpMethod.post,
+      headers: {
+        'X-Parse-Session-Token': token,
+      },
+    );
+
+    final userData = User.fromMap(result['result']);
+
+    return userData;
   }
 }
