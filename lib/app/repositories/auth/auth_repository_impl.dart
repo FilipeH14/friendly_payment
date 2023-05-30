@@ -11,8 +11,17 @@ class AuthRepositoryImpl implements AuthRepository {
   AuthRepositoryImpl({required BaseRestUser request}) : _request = request;
 
   @override
-  Future<void> signIn() {
-    throw UnimplementedError();
+  Future<void> signIn(String email, String password) async {
+    final result = await _request.restDioRequest(
+      url: Endpoints.signin,
+      method: HttpMethod.post,
+      body: {
+        'email': email,
+        'password': password,
+      },
+    );
+
+    final userData = User.fromMap(result['result']);
   }
 
   @override
@@ -20,12 +29,11 @@ class AuthRepositoryImpl implements AuthRepository {
     final result = await _request.restDioRequest(
       url: Endpoints.signup,
       method: HttpMethod.post,
-      body: user.toMap()
+      body: user.toMap(),
     );
 
-    final user2 = User.fromMap(result['result']);
+    final userData = User.fromMap(result['result']);
 
     throw UnimplementedError();
-    
   }
 }
