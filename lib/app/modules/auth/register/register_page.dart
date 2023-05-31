@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:friendly_payment/app/core/widgets/friendly_button.dart';
 import 'package:friendly_payment/app/core/widgets/friendly_input.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +27,10 @@ class LoginPage extends StatelessWidget {
                         const SizedBox(height: 20),
                         const FriendlyInput(label: 'Senha'),
                         const SizedBox(height: 20),
+                        const FriendlyInput(label: 'Nome'),
+                        const SizedBox(height: 20),
+                        const FriendlyInput(label: 'Cidade'),
+                        const SizedBox(height: 20),
                         const FriendlyButton(),
                         const SizedBox(height: 20),
                         GestureDetector(
@@ -34,15 +38,15 @@ class LoginPage extends StatelessWidget {
                             TextSpan(
                               children: [
                                 TextSpan(
-                                  text: 'Não é cadastrado?  ',
+                                  text: 'Ja é cadastrado?  ',
                                 ),
                                 TextSpan(
-                                  text: 'Cadastre-se aqui',
+                                  text: 'Entrar aqui',
                                 ),
                               ],
                             ),
                           ),
-                          onTap: () => Navigator.of(context).pushNamed('/register'),
+                          onTap: () => Navigator.of(context).pushNamed('/login'),
                         ),
                       ],
                     ),
