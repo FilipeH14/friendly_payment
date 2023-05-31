@@ -27,7 +27,7 @@ class LoginPage extends StatelessWidget {
                         const SizedBox(height: 20),
                         const FriendlyInput(label: 'Senha'),
                         const SizedBox(height: 20),
-                        const FriendlyButton(),
+                        const FriendlyButton(text: 'Entrar'),
                         const SizedBox(height: 20),
                         GestureDetector(
                           child: const Text.rich(

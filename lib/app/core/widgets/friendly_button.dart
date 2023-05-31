@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
 class FriendlyButton extends StatelessWidget {
-  const FriendlyButton({super.key});
+  final String text;
+
+  const FriendlyButton({
+    required this.text,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +16,7 @@ class FriendlyButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
         ),
       ),
-      child: const Text('Entrar'),
+      child: Text(text),
       onPressed: () {},
     );
   }

@@ -31,7 +31,7 @@ class RegisterPage extends StatelessWidget {
                         const SizedBox(height: 20),
                         const FriendlyInput(label: 'Cidade'),
                         const SizedBox(height: 20),
-                        const FriendlyButton(),
+                        const FriendlyButton(text: 'Cadastrar'),
                         const SizedBox(height: 20),
                         GestureDetector(
                           child: const Text.rich(
