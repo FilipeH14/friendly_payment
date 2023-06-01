@@ -1,9 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:friendly_payment/app/core/widgets/friendly_button.dart';
 import 'package:friendly_payment/app/core/widgets/friendly_input.dart';
+import 'package:friendly_payment/app/modules/auth/login/controller/login_controller.dart';
+import 'package:provider/provider.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+
+  late final LoginController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = context.read<LoginController>();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +58,8 @@ class LoginPage extends StatelessWidget {
                               ],
                             ),
                           ),
-                          onTap: () => Navigator.of(context).pushNamed('/register'),
+                          onTap: () =>
+                              Navigator.of(context).pushNamed('/register'),
                         ),
                       ],
                     ),

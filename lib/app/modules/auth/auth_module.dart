@@ -10,7 +10,7 @@ class AuthModule extends BaseModuleProvider {
   AuthModule()
       : super(
           bindings: [
-            ChangeNotifierProvider(create: (_) => LoginController()),
+            Provider(create: (context) => LoginController(authService: context.read())),
             ChangeNotifierProvider(create: (_) => RegisterController()),
           ],
           routers: {
